@@ -1,0 +1,60 @@
+
+# Root directory and tmp directory for binary storage
+root = "."
+tmp_dir = "tmp"
+
+[build]
+  # Command to build the Go binary
+  cmd = "go build -o ./tmp/main cmd/main.go"
+  # Where the binary will be stored
+  bin = "./tmp/main"
+  # Watch the following directories for changes
+  include_dir = ["cmd", "views", "static/css", "static/assets"]
+  # Exclude these directories from being watched
+  exclude_dir = ["tmp"]
+  # Exclude files matching these patterns (e.g., test files)
+  exclude_regex = ["_test.go"]
+  # Delay before triggering rebuild after file change
+  delay = 0
+  # No file exclusion by default
+  exclude_file = []
+  # Don't exclude unchanged files (set to false to rebuild on any file change)
+  exclude_unchanged = false
+  # Set rerun delay to 500ms to avoid rapid rebuilds
+  rerun_delay = 500
+  # Don't send interrupt signal after the build
+  send_interrupt = false
+  # Continue running even if there are errors
+  stop_on_error = false
+  # Enable log output for build errors
+  log = "build-errors.log"
+  # Poll for file changes if needed (useful for certain environments)
+  poll = false
+  # Do not rerun unless there is a file change
+  rerun = false
+  # Use no additional arguments for the build command
+  args_bin = []
+
+[color]
+  # Coloring configuration for output in the terminal
+  app = ""
+  build = "yellow"
+  main = "magenta"
+  runner = "green"
+  watcher = "cyan"
+
+[log]
+  # Logging configuration for Air's output
+  main_only = false
+  time = false
+
+[misc]
+  # Clean the tmp directory on exit
+  clean_on_exit = false
+
+[screen]
+  # Do not clear the terminal screen on rebuild
+  clear_on_rebuild = false
+  # Keep the scroll in the terminal
+  keep_scroll = true
+

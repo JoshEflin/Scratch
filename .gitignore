@@ -1,0 +1,44 @@
+# Ignore Go build output
+/tmp/
+/bin/
+/obj/
+
+# Ignore the Air binary and temporary files
+/tmp/*
+*.air
+
+# Ignore vendor directory (if using Go modules)
+vendor/
+
+# Node.js-related files
+node_modules/
+
+# Ignore log files
+*.log
+
+# Ignore IDE or editor-specific files (common examples)
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Ignore OS-specific files
+.DS_Store  # macOS Finder folder settings
+Thumbs.db  # Windows Explorer file settings
+
+# Ignore Go test result files
+*.test
+*.out
+*.coverage
+
+# Ignore environment files (secrets, configurations, etc.)
+.env
+
+# Ignore Go module cache (Go 1.11+ modules)
+go.sum
+go.mod
+
+# Ignore package manager lock files (if not using npm or yarn to manage frontend)
+package-lock.json
+yarn.lock
+
