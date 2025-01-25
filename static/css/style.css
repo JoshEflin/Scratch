@@ -176,14 +176,39 @@
     }
 }
 
+@layer layout {
+    .wrapper {
+        --wrapper-max-width: 1130px;
+        --wrapper-padding: 1rem;
+
+        max-width: var(--wrapper-max-width);
+        margin-inline: auto;
+        padding-inline: var(--wrapper-padding);
+
+        box-sizing: content-box;
+
+        &[data-type="narrow"] {
+            --wrapper-max-width: 720px;
+        }
+
+        &[data-type="wide"] {
+            --wrapper-max-width: 1330px;
+        }
+    }
+
+}
+
 @layer utilities {
     .sr-only {
-        clip: rect(0 0 0 0);
-        clip-path: inset(50%);
-        height: 1px;
-        overflow: hidden;
         position: absolute;
-        white-space: nowrap;
         width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        border: 0;
+        clip: rect(0, 0, 0, 0);
+        clip-path: inset(50%);
+        overflow: hidden;
+        white-space: nowrap;
     }
 }
